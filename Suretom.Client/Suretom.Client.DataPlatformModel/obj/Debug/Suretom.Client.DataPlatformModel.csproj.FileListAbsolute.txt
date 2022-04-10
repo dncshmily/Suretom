@@ -1,0 +1,10 @@
+D:\Project\Demo\CTB.Client\CTBClient.DataPlatformModel\bin\Debug\CTBClient.DataPlatformModel.dll
+D:\Project\Demo\CTB.Client\CTBClient.DataPlatformModel\bin\Debug\CTBClient.DataPlatformModel.pdb
+D:\Project\Demo\CTB.Client\CTBClient.DataPlatformModel\obj\Debug\Suretom.Client.DataPlatformModel.csproj.CoreCompileInputs.cache
+D:\Project\Demo\CTB.Client\CTBClient.DataPlatformModel\obj\Debug\CTBClient.DataPlatformModel.dll
+D:\Project\Demo\CTB.Client\CTBClient.DataPlatformModel\obj\Debug\CTBClient.DataPlatformModel.pdb
+D:\Project\Demo\Suretom.Client\Suretom.Client.DataPlatformModel\bin\Debug\CTBClient.DataPlatformModel.dll
+D:\Project\Demo\Suretom.Client\Suretom.Client.DataPlatformModel\bin\Debug\CTBClient.DataPlatformModel.pdb
+D:\Project\Demo\Suretom.Client\Suretom.Client.DataPlatformModel\obj\Debug\Suretom.Client.DataPlatformModel.csproj.CoreCompileInputs.cache
+D:\Project\Demo\Suretom.Client\Suretom.Client.DataPlatformModel\obj\Debug\CTBClient.DataPlatformModel.dll
+D:\Project\Demo\Suretom.Client\Suretom.Client.DataPlatformModel\obj\Debug\CTBClient.DataPlatformModel.pdb

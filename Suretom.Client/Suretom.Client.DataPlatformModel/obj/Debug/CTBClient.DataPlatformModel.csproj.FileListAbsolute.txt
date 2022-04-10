@@ -1,0 +1,10 @@
+D:\Project\git\CTB.Client\CTBClient.DataPlatformModel\bin\Debug\CTBClient.DataPlatformModel.dll
+D:\Project\git\CTB.Client\CTBClient.DataPlatformModel\bin\Debug\CTBClient.DataPlatformModel.pdb
+D:\Project\git\CTB.Client\CTBClient.DataPlatformModel\obj\Debug\CTBClient.DataPlatformModel.csproj.CoreCompileInputs.cache
+D:\Project\git\CTB.Client\CTBClient.DataPlatformModel\obj\Debug\CTBClient.DataPlatformModel.dll
+D:\Project\git\CTB.Client\CTBClient.DataPlatformModel\obj\Debug\CTBClient.DataPlatformModel.pdb
+D:\Project\Demo\CTB.Client\CTBClient.DataPlatformModel\bin\Debug\CTBClient.DataPlatformModel.dll
+D:\Project\Demo\CTB.Client\CTBClient.DataPlatformModel\bin\Debug\CTBClient.DataPlatformModel.pdb
+D:\Project\Demo\CTB.Client\CTBClient.DataPlatformModel\obj\Debug\CTBClient.DataPlatformModel.csproj.CoreCompileInputs.cache
+D:\Project\Demo\CTB.Client\CTBClient.DataPlatformModel\obj\Debug\CTBClient.DataPlatformModel.dll
+D:\Project\Demo\CTB.Client\CTBClient.DataPlatformModel\obj\Debug\CTBClient.DataPlatformModel.pdb

@@ -1,0 +1,76 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "fb88520b-bf56-420e-b12b-2081b39bae50": {
+      "ProjectGuid": "fb88520b-bf56-420e-b12b-2081b39bae50",
+      "DisplayName": "Suretom.Client.UI",
+      "ColorIndex": 0
+    },
+    "cf9aaba0-e3a9-4da1-a452-6226872fa027": {
+      "ProjectGuid": "cf9aaba0-e3a9-4da1-a452-6226872fa027",
+      "DisplayName": "Suretom.Client.ViewModel",
+      "ColorIndex": 1
+    },
+    "f56845c5-7c2b-489c-96f9-0eeac1c99c30": {
+      "ProjectGuid": "f56845c5-7c2b-489c-96f9-0eeac1c99c30",
+      "DisplayName": "Suretom.Client.Services",
+      "ColorIndex": 2
+    },
+    "23725432-ef8d-46fe-b2c2-79c7b96984b5": {
+      "ProjectGuid": "23725432-ef8d-46fe-b2c2-79c7b96984b5",
+      "DisplayName": "Suretom.Client.DataPlatformServices",
+      "ColorIndex": 3
+    },
+    "a8900c57-d5bd-480f-9efb-7f0708cc8ccd": {
+      "ProjectGuid": "a8900c57-d5bd-480f-9efb-7f0708cc8ccd",
+      "DisplayName": "Suretom.Client.Common",
+      "ColorIndex": 4
+    },
+    "0a47dc1c-877d-4e3d-8db4-692c42933680": {
+      "ProjectGuid": "0a47dc1c-877d-4e3d-8db4-692c42933680",
+      "DisplayName": "Suretom.Client.DataToolsModel",
+      "ColorIndex": 5
+    },
+    "a8060224-a212-4e86-99f0-5decf5471009": {
+      "ProjectGuid": "a8060224-a212-4e86-99f0-5decf5471009",
+      "DisplayName": "Suretom.Client.Model",
+      "ColorIndex": 6
+    },
+    "c9ffa6a0-cdd0-412a-b996-b9a88bceb290": {
+      "ProjectGuid": "c9ffa6a0-cdd0-412a-b996-b9a88bceb290",
+      "DisplayName": "4.Entity",
+      "ColorIndex": 7
+    },
+    "ff1512fc-e631-44e0-8dd0-96076a8654d6": {
+      "ProjectGuid": "ff1512fc-e631-44e0-8dd0-96076a8654d6",
+      "DisplayName": "5.Common",
+      "ColorIndex": 8
+    },
+    "06567ac9-7551-4947-9cbb-eea018dacbda": {
+      "ProjectGuid": "06567ac9-7551-4947-9cbb-eea018dacbda",
+      "DisplayName": "6.Tool",
+      "ColorIndex": 9
+    },
+    "18435bd1-044e-474c-aa40-9356aa117a2b": {
+      "ProjectGuid": "18435bd1-044e-474c-aa40-9356aa117a2b",
+      "DisplayName": "Suretom.Client.Tool",
+      "ColorIndex": 10
+    },
+    "60363faf-d926-479a-a1fd-b3ab2f4f3a05": {
+      "ProjectGuid": "60363faf-d926-479a-a1fd-b3ab2f4f3a05",
+      "DisplayName": "2.Services",
+      "ColorIndex": 11
+    },
+    "ebc964fc-49cb-490f-b7ee-86bd79d43ea9": {
+      "ProjectGuid": "ebc964fc-49cb-490f-b7ee-86bd79d43ea9",
+      "DisplayName": "1.Client",
+      "ColorIndex": 12
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "杂项文件",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 13
+}

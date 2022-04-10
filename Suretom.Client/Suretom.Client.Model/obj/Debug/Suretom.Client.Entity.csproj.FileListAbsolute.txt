@@ -1,0 +1,7 @@
+I:\project\Suretom.Client\Suretom.Client.Model\bin\Debug\Suretom.Client.Entity.dll
+I:\project\Suretom.Client\Suretom.Client.Model\bin\Debug\Suretom.Client.Entity.pdb
+I:\project\Suretom.Client\Suretom.Client.Model\obj\Debug\Suretom.Client.Entity.csproj.AssemblyReference.cache
+I:\project\Suretom.Client\Suretom.Client.Model\obj\Debug\Suretom.Client.Entity.csproj.CoreCompileInputs.cache
+I:\project\Suretom.Client\Suretom.Client.Model\obj\Debug\Suretom.Client.Entity.csproj.CopyComplete
+I:\project\Suretom.Client\Suretom.Client.Model\obj\Debug\Suretom.Client.Entity.dll
+I:\project\Suretom.Client\Suretom.Client.Model\obj\Debug\Suretom.Client.Entity.pdb

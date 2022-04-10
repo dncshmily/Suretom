@@ -1,0 +1,2 @@
+2022-04-07 23:49:58.1948--Trace 【Suretom.Client.Common.ServiceBase.TraceRequest】 【Suretom.Client.Service.LoginService】--> {"userCode":"15256955261","userPass":"123456","Token":""} 
+2022-04-07 23:50:00.3285--Trace 【Suretom.Client.Common.ServiceBase.TraceResponse】 【Suretom.Client.Service.LoginService】<-- Success:False  Message:无法连接到远程服务器  Data: 
