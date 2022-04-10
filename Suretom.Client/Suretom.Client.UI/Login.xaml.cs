@@ -34,6 +34,7 @@ namespace Suretom.Client.UI
             //var str = loginService.GetVerifyCode();
 
             //byte[] byteArray = Encoding.Default.GetBytes(str);
+
             //Stream stream = new MemoryStream(byteArray);
             //this.image1.Source = BitmapFrame.Create(stream);
 
