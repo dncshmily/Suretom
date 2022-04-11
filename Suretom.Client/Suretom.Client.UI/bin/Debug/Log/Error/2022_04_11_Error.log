@@ -1,0 +1,19 @@
+2022-04-11 16:44:00.0764--Error 【Suretom.Client.UI.Login.btnLogin_Click】 System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:5000
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 Suretom.Client.Common.FormHttpChannel.PostForm(String requestUri, NameValueCollection postData, CookieContainer cookie) 位置 D:\Project\Demo\Suretom.Client_20220411\Suretom\Suretom.Client\Suretom.Client.Common\Communication\FormHttpChannel.cs:行号 98
+   在 Suretom.Client.Common.ServiceBase.PostForm(String url, NameValueCollection paramValue) 位置 D:\Project\Demo\Suretom.Client_20220411\Suretom\Suretom.Client\Suretom.Client.Common\Services\ServiceBase.cs:行号 87
+   在 Suretom.Client.Service.LoginService.Login(String userCode, String userPass, String verifycode) 位置 D:\Project\Demo\Suretom.Client_20220411\Suretom\Suretom.Client\Suretom.Client.Service\Login\LoginService.cs:行号 98
+   在 Suretom.Client.UI.Login.btnLogin_Click(Object sender, RoutedEventArgs e) 位置 D:\Project\Demo\Suretom.Client_20220411\Suretom\Suretom.Client\Suretom.Client.UI\Login.xaml.cs:行号 146 System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:5000
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 Suretom.Client.Common.FormHttpChannel.PostForm(String requestUri, NameValueCollection postData, CookieContainer cookie) 位置 D:\Project\Demo\Suretom.Client_20220411\Suretom\Suretom.Client\Suretom.Client.Common\Communication\FormHttpChannel.cs:行号 98
+   在 Suretom.Client.Common.ServiceBase.PostForm(String url, NameValueCollection paramValue) 位置 D:\Project\Demo\Suretom.Client_20220411\Suretom\Suretom.Client\Suretom.Client.Common\Services\ServiceBase.cs:行号 87
+   在 Suretom.Client.Service.LoginService.Login(String userCode, String userPass, String verifycode) 位置 D:\Project\Demo\Suretom.Client_20220411\Suretom\Suretom.Client\Suretom.Client.Service\Login\LoginService.cs:行号 98
+   在 Suretom.Client.UI.Login.btnLogin_Click(Object sender, RoutedEventArgs e) 位置 D:\Project\Demo\Suretom.Client_20220411\Suretom\Suretom.Client\Suretom.Client.UI\Login.xaml.cs:行号 146
