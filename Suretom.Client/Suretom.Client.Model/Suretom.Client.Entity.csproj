@@ -54,6 +54,7 @@
     <Compile Include="Dto\Demo\DoingCellsDto.cs" />
     <Compile Include="Dto\Demo\ResultDto.cs" />
     <Compile Include="Dto\PaperParam.cs" />
+    <Compile Include="Dto\StudentInfo.cs" />
     <Compile Include="Dto\Userinfo.cs" />
     <Compile Include="Enum\AliyunEnum.cs" />
     <Compile Include="Enum\CodeTypeEnum.cs" />
@@ -61,7 +62,7 @@
     <Compile Include="Enum\LoginReslt.cs" />
     <Compile Include="Enum\ScopeType.cs" />
     <Compile Include="Model\ServiceInfo.cs" />
-    <Compile Include="Model\StudentInfo.cs" />
+    <Compile Include="Model\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Dto\PathQueryInfo.cs" />
   </ItemGroup>

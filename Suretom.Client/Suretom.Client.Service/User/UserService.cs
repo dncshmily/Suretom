@@ -16,8 +16,6 @@ namespace Suretom.Client.Service
         public UserService()
         {
             Urls.Add("Info", "User/Info");
-            Urls.Add("Add", "User/AddStudent");
-            Urls.Add("List", "User/StudentList");
         }
 
         /// <summary>

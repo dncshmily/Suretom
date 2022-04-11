@@ -87,19 +87,13 @@ namespace Suretom.Client.UI.Pages.Demo
                 //学生
                 var studentInfo = new StudentInfo()
                 {
-                    IdCard = "342422199608057015",
-                    PassWord = "057015",
-                    Name = userInfo.Name,
-                    No = "202121212155",
-                    ClassName = "2021年春季-农学-09011(专升本)-淮南组织部",
-                    Type = "函授"
                 };
 
-                labNane.Content = studentInfo.Name;
-                labIdCard.Content = studentInfo.IdCard;
-                labNo.Content = studentInfo.No;
-                labClass.Content = studentInfo.ClassName;
-                labIdType.Content = studentInfo.Type;
+                //labNane.Content = studentInfo.Name;
+                //labIdCard.Content = studentInfo.IdCard;
+                //labNo.Content = studentInfo.No;
+                //labClass.Content = studentInfo.ClassName;
+                //labIdType.Content = studentInfo.Type;
 
                 //课程
                 var courseList = new DemoData(studentInfo).GetCourseList();

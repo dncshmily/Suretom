@@ -14,32 +14,29 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 
-
 namespace Suretom.Client.Data
 {
-    public  class DemoData
+    public class DemoData
     {
-        string apiUrl = "https://main.ahjxjy.cn/";
-        string idCard =string.Empty;
-        string passWord = string.Empty;
+        private string apiUrl = "https://main.ahjxjy.cn/";
+        private string idCard = string.Empty;
+        private string passWord = string.Empty;
 
         public DemoData()
         {
-  
         }
 
         public DemoData(StudentInfo info)
         {
-            idCard = info.IdCard;
-            passWord = info.PassWord;
+            idCard = "";
+            passWord = "";
         }
-
 
         /// <summary>
         /// 课程列表数据
         /// </summary>
         /// <returns></returns>
-        public  ResultDto<CourseDto> GetCourseList()
+        public ResultDto<CourseDto> GetCourseList()
         {
             var key = UtilityHelper.MD5_Encrypt($"{passWord}zmzrazilo7no32zysvn0ug").ToUpper();
             var info = CourseHelper.AesEncrypt(idCard, key);
@@ -62,9 +59,11 @@ namespace Suretom.Client.Data
                     case 100:
                         courseInfo.ScheduleTxt = "已完成";
                         return;
+
                     case 0:
                         courseInfo.ScheduleTxt = "未开始";
                         return;
+
                     default:
                         courseInfo.ScheduleTxt = "学习中";
                         return;
@@ -85,7 +84,6 @@ namespace Suretom.Client.Data
 
             var key = UtilityHelper.MD5_Encrypt($"{pass}zmzrazilo7no32zysvn0ug").ToUpper();
             var info = CourseHelper.AesEncrypt(aseKey, key);
-
 
             var cookie = CourseHelper.FromPost($"{apiUrl}api/login/newLogin", $"userName={Uri.EscapeDataString(info) }&passWord={key}&userType=1", Encoding.UTF8);
 
