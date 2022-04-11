@@ -11,6 +11,8 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using Suretom.Client.IService;
+using Suretom.Client.Common;
 
 namespace Suretom.Client.UI.Pages.Demo
 {
@@ -27,6 +29,8 @@ namespace Suretom.Client.UI.Pages.Demo
 
         private List<string> studentList = new List<string>() { "张三", "李四", "王五", "赵六", "孙七" };
 
+        private IUserService userService;
+
         /// <summary>
         /// 是否停止处理
         /// </summary>
@@ -36,11 +40,13 @@ namespace Suretom.Client.UI.Pages.Demo
         {
             InitializeComponent();
 
+            userService = GlobalContext.Resolve<IUserService>();
+
             FillTreeView(schoolList);
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public class CourseInfo
         {
@@ -49,7 +55,7 @@ namespace Suretom.Client.UI.Pages.Demo
             public string DeadlineTime { get; set; }
         }
 
-        List<CourseInfo> courseInfos = new List<CourseInfo>()
+        private List<CourseInfo> courseInfos = new List<CourseInfo>()
         {
             new CourseInfo()
             {
@@ -70,7 +76,7 @@ namespace Suretom.Client.UI.Pages.Demo
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -83,7 +89,7 @@ namespace Suretom.Client.UI.Pages.Demo
                 {
                     IdCard = "342422199608057015",
                     PassWord = "057015",
-                    Name = "张三",
+                    Name = userInfo.Name,
                     No = "202121212155",
                     ClassName = "2021年春季-农学-09011(专升本)-淮南组织部",
                     Type = "函授"
@@ -173,7 +179,6 @@ namespace Suretom.Client.UI.Pages.Demo
 
         #endregion 按钮
 
-
         private ImageSource _folderClose;
         private ImageSource _folderOpen;
         private ImageSource _fileThumbnail;
@@ -206,7 +211,6 @@ namespace Suretom.Client.UI.Pages.Demo
             {
                 this.Cursor = Cursors.Wait;
                 this.ForceCursor = true;
-
             }
             catch (Exception ex)
             {
@@ -287,8 +291,9 @@ namespace Suretom.Client.UI.Pages.Demo
         #endregion
 
         #region FillTreeView Methods
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="list"></param>
         private void FillTreeView(List<string> schoolList)
@@ -300,7 +305,6 @@ namespace Suretom.Client.UI.Pages.Demo
 
             treeView.BeginInit();
             treeView.Items.Clear();
-
 
             for (int i = 0; i < schoolList.Count; i++)
             {

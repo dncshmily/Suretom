@@ -1,4 +1,5 @@
 ﻿using Suretom.Client.Common;
+using System.Collections.Specialized;
 
 namespace Suretom.Client.IService
 {
@@ -37,6 +38,6 @@ namespace Suretom.Client.IService
         /// </summary>
         /// <param name="userCode"></param>
         /// <param name="userPass"></param>
-        HttpResult Login(string userCode, string userPass, string verifycode);
+        HttpResult Login(NameValueCollection paramValue);
     }
 }

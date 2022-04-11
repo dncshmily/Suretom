@@ -2,6 +2,7 @@
 using Suretom.Client.Common;
 using Suretom.Client.IService;
 using System;
+using System.Collections.Specialized;
 
 namespace Suretom.Client.Service
 {
@@ -63,7 +64,12 @@ namespace Suretom.Client.Service
 
             var result = Get(JsonConvert.SerializeObject(param), Urls["Code"], this.GetType());
 
-            return result;
+            if (!result.Success)
+            {
+                return "";
+            }
+
+            return result.Data.ToString();
         }
 
         /// <summary>
@@ -72,16 +78,16 @@ namespace Suretom.Client.Service
         /// <param name="userCode"></param>
         /// <param name="userPass"></param>
         /// <returns></returns>
-        public HttpResult Login(string userCode, string userPass, string verifycode)
+        public HttpResult Login(NameValueCollection paramValue)
         {
-            if (string.IsNullOrEmpty(userCode))
+            if (string.IsNullOrEmpty(paramValue["userCode"]))
                 throw new ArgumentException("userCode");
-            if (string.IsNullOrEmpty(userPass))
-                throw new ArgumentException("userPass");
+            if (string.IsNullOrEmpty(paramValue["userPwd"]))
+                throw new ArgumentException("userPwd");
+            if (string.IsNullOrEmpty(paramValue["verifycode"]))
+                throw new ArgumentException("verifycode");
 
-            var param = new { userCode, userPass, verifycode, GlobalContext.Token };
-
-            var result = Post(JsonConvert.SerializeObject(param), Urls["Login"], this.GetType());
+            var result = PostForm(Urls["Login"], paramValue);
 
             return result;
         }

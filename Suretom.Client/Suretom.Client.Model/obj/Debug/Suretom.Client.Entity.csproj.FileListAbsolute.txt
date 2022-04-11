@@ -5,3 +5,8 @@ I:\project\Suretom.Client\Suretom.Client.Model\obj\Debug\Suretom.Client.Entity.c
 I:\project\Suretom.Client\Suretom.Client.Model\obj\Debug\Suretom.Client.Entity.csproj.CopyComplete
 I:\project\Suretom.Client\Suretom.Client.Model\obj\Debug\Suretom.Client.Entity.dll
 I:\project\Suretom.Client\Suretom.Client.Model\obj\Debug\Suretom.Client.Entity.pdb
+D:\Project\Demo\Suretom.Client_20220411\Suretom\Suretom.Client\Suretom.Client.Model\bin\Debug\Suretom.Client.Entity.dll
+D:\Project\Demo\Suretom.Client_20220411\Suretom\Suretom.Client\Suretom.Client.Model\bin\Debug\Suretom.Client.Entity.pdb
+D:\Project\Demo\Suretom.Client_20220411\Suretom\Suretom.Client\Suretom.Client.Model\obj\Debug\Suretom.Client.Entity.csproj.CoreCompileInputs.cache
+D:\Project\Demo\Suretom.Client_20220411\Suretom\Suretom.Client\Suretom.Client.Model\obj\Debug\Suretom.Client.Entity.dll
+D:\Project\Demo\Suretom.Client_20220411\Suretom\Suretom.Client\Suretom.Client.Model\obj\Debug\Suretom.Client.Entity.pdb

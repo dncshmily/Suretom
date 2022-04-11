@@ -43,15 +43,21 @@
   <ItemGroup>
     <Compile Include="Login\ILoginService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\IUserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Suretom.Client.Common\Suretom.Client.Common.csproj">
       <Project>{A8900C57-D5BD-480F-9EFB-7F0708CC8CCD}</Project>
       <Name>Suretom.Client.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Suretom.Client.Model\Suretom.Client.Entity.csproj">
+      <Project>{A8060224-A212-4E86-99F0-5DECF5471009}</Project>
+      <Name>Suretom.Client.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

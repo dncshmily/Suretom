@@ -29,6 +29,7 @@ namespace Suretom.Client.UI.Ioc
             builder.RegisterInstance(httpChannel).As<IHttpChannel>().SingleInstance();
 
             builder.RegisterType<LoginService>().As<ILoginService>().InstancePerLifetimeScope();
+            builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope();
         }
     }
 }

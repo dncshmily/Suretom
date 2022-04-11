@@ -1,6 +1,7 @@
 ﻿using Suretom.Client.Entity;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 
 namespace Suretom.Client.Common
 {
@@ -40,20 +41,12 @@ namespace Suretom.Client.Common
         /// <param name="url">调用的Url</param>
         /// <param name="serviceType">调用的服务类型</param>
         /// <returns></returns>
-        protected string Get(string httpJsonParam, string url, Type serviceType)
+        protected HttpResult Get(string httpJsonParam, string url, Type serviceType)
         {
             if (GlobalContext.ShowServiceTraceLog)
                 TraceRequest(serviceType, httpJsonParam);
 
-            var ctbConfig = GlobalContext.Resolve<SuretomConfig>();
-            if (ctbConfig.AppType == AppType.DataPlatform)
-            {
-                //url = url.Replace("Stone.ItemService/", "");
-            }
-
-            var jiekou = $"{GlobalContext.ClientApiUrl}{url}";
-
-            var result = HttpChannel.Get(jiekou);
+            var result = HttpChannel.Get($"{GlobalContext.ClientApiUrl}{url}");
 
             return result;
         }
@@ -78,6 +71,20 @@ namespace Suretom.Client.Common
             {
                 TraceResponse(serviceType, result);
             }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 通用的服务调用
+        /// </summary>
+        /// <param name="paramList">参数List</param>
+        /// <param name="url">调用的Url</param>
+        /// <param name="serviceType">调用的服务类型</param>
+        /// <returns></returns>
+        protected HttpResult PostForm(string url, NameValueCollection paramValue)
+        {
+            var result = HttpChannel.PostForm($"{GlobalContext.ClientApiUrl}{url}", paramValue, null);
 
             return result;
         }

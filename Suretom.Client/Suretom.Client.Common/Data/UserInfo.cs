@@ -59,6 +59,11 @@
         /// <summary>
         ///验证码
         /// </summary>
-        public string verifycode { get; set; } = string.Empty;
+        public string Verifycode { get; set; } = string.Empty;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public UserInfo userInfo { get; set; } = new UserInfo();
     }
 }

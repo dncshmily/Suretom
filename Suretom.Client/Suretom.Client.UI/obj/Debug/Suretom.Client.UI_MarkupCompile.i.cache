@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-I:\project\Suretom.Client\Suretom.Client.UI\obj\Debug\
+D:\Project\Demo\Suretom.Client_20220411\Suretom\Suretom.Client\Suretom.Client.UI\obj\Debug\
 Suretom.Client.UI
 none
 false
 DEBUG;TRACE
-I:\project\Suretom.Client\Suretom.Client.UI\App.xaml
+D:\Project\Demo\Suretom.Client_20220411\Suretom\Suretom.Client\Suretom.Client.UI\App.xaml
 19-880790499
-31521619366
+3-1224192894
 151180041178
-148902348322
+1501127518561
 Login.xaml;MainWindow.xaml;Pages\Demo\DemoWin.xaml;Pages\Demo\DemoWinContent.xaml;PathGeometries\Glyphicons.xaml;Styles\BaseStyle.xaml;Styles\Bootstrap.xaml;Styles\Button.xaml;Styles\Colors.xaml;Styles\DataGrid.xaml;Styles\Fonts.xaml;Styles\FormControl.xaml;Styles\InputGroup.xaml;Styles\Label.xaml;Styles\Panel.xaml;Styles\Path.xaml;Styles\ProgressBar.xaml;Styles\Sizes.xaml;Styles\Window.xaml;
 
-False
+True
 

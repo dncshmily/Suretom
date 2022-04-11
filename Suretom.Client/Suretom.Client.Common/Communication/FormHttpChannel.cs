@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -21,26 +22,10 @@ namespace Suretom.Client.Common
         /// Get请求
         /// </summary>
         /// <returns></returns>
-        public string Get(string url, Encoding encode = null)
+        public HttpResult Get(string url, Encoding encode = null)
         {
-            var result = string.Empty;
-
             try
             {
-                //var webClient = new WebClient { Encoding = Encoding.UTF8 };
-                //if (encode != null)
-                //    webClient.Encoding = encode;
-
-                //ServicePointManager.Expect100Continue = false;
-                //if (url.StartsWith("https")) ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-
-                //webClient.Headers.Add("Content-Type", "multipart/form-data");
-                //var sendData = Encoding.GetEncoding("UTF-8").GetBytes("");
-                //webClient.Headers.Add("ContentLength", sendData.Length.ToString(CultureInfo.InvariantCulture));
-                //var readData = webClient.DownloadData(url);
-
-                //result = Encoding.GetEncoding("UTF-8").GetString(readData);
-
                 WebRequest request = WebRequest.Create(url);
                 if (url.ToLower().StartsWith("https"))
                 {
@@ -48,22 +33,10 @@ namespace Suretom.Client.Common
                     ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
                 }
 
+                request.Headers.Add("token", GlobalContext.Token);
                 request.Method = "Get";
                 request.Timeout = 120000;
                 request.ContentType = "multipart/form-data";
-
-                var stream1 = request.GetResponse().GetResponseStream();
-                // 把 Stream 转换成 byte[]
-                byte[] bytes = new byte[stream1.Length];
-                stream1.Read(bytes, 0, bytes.Length);
-                // 设置当前流的位置为流的开始
-                stream1.Seek(0, SeekOrigin.Begin);
-                // 把 byte[] 写入文件
-                FileStream fs = new FileStream("I:\\project\\Demo\\001.jpg", FileMode.Create);
-                BinaryWriter bw = new BinaryWriter(fs);
-                bw.Write(bytes);
-                bw.Close();
-                fs.Close();
 
                 using (WebResponse response = request.GetResponse())
                 {
@@ -71,16 +44,89 @@ namespace Suretom.Client.Common
                     {
                         using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
                         {
-                            result = reader.ReadToEnd();
+                            var value = reader.ReadToEnd();
+
+                            if (value.IndexOf("-ERR") == 0 || value.IndexOf("-err") == 0)
+                            {
+                                value = value.Replace("-ERR ", "").Replace("-err ", "");
+
+                                return new HttpResult(value);
+                            }
+                            else
+                            {
+                                var result = JObject.Parse(value);
+                                var success = result["status"]?.ToString() == "200" ? true : false;
+                                if (success)
+                                {
+                                    return new HttpResult(true, result["data"]);
+                                }
+                                else
+                                    return new HttpResult(result["message"]?.ToString());
+                            }
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                result = ex.Message;
+                return new HttpResult(ex.Message);
             }
-            return result;
+        }
+
+        /// <summary>
+        /// 默认表单提交
+        /// </summary>
+        /// <param name="requestUri">提交路径</param>
+        /// <param name="postData">提交数据</param>
+        /// <param name="cookie">Cookie容器对象</param>
+        /// <returns>字符串结果</returns>
+        public HttpResult PostForm(string requestUri, NameValueCollection postData, CookieContainer cookie = null)
+        {
+            HttpWebRequest request = WebRequest.CreateHttp(requestUri);
+            request.Method = "post";
+            request.ContentType = "application/x-www-form-urlencoded";
+            if (cookie!=null)
+            {
+                request.CookieContainer = cookie;
+            }
+
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (string key in postData.Keys)
+            {
+                stringBuilder.AppendFormat("&{0}={1}", key, postData.Get(key));
+            }
+            byte[] buffer = Encoding.UTF8.GetBytes(stringBuilder.ToString().Trim('&'));
+            Stream requestStream = request.GetRequestStream();
+            requestStream.Write(buffer, 0, buffer.Length);
+            requestStream.Close();
+
+            using (WebResponse response = request.GetResponse())
+            {
+                using (Stream stream = response.GetResponseStream())
+                {
+                    using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                    {
+                        string value = reader.ReadToEnd();
+                        if (value.IndexOf("-ERR") == 0 || value.IndexOf("-err") == 0)
+                        {
+                            value = value.Replace("-ERR ", "").Replace("-err ", "");
+
+                            return new HttpResult(value);
+                        }
+                        else
+                        {
+                            var result = JObject.Parse(value);
+                            var success = result["status"]?.ToString() == "200" ? true : false;
+                            if (success)
+                            {
+                                return new HttpResult(true, result["data"]);
+                            }
+                            else
+                                return new HttpResult(result["message"]?.ToString());
+                        }
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -105,8 +151,9 @@ namespace Suretom.Client.Common
                 request.Method = "POST";
                 request.Timeout = 200000;
                 request.ContentType = "application/x-www-form-urlencoded";
+                request.ContentType = "application/x-www-form-urlencoded";
 
-                var postData = System.Text.Encoding.UTF8.GetBytes(requestParam);
+                var postData = Encoding.UTF8.GetBytes(requestParam);
                 Stream requestStream = request.GetRequestStream();
                 requestStream.Write(postData, 0, postData.Length);
                 requestStream.Close();
@@ -240,47 +287,6 @@ namespace Suretom.Client.Common
 
                 return new HttpResult(ex.Message);
             }
-        }
-
-        /// <summary>
-        /// 把json字符串转为键值对字符串
-        /// </summary>
-        /// <param name="jsonStr"></param>
-        /// <returns></returns>
-        private string JsonStr2KvStr(string jsonStr)
-        {
-            //if (jsonStr.Contains("&"))
-            //{
-            //    throw new ArgumentException("jsonStr中禁止使用&");
-            //}
-
-            JToken jToken;
-            try
-            {
-                jToken = JToken.Parse(jsonStr);
-            }
-            catch
-            {
-                throw new ArgumentException("jsonStr的值不是有效的json字符串");
-            }
-
-            if (jToken.Type != JTokenType.Object)
-            {
-                throw new ArgumentException("jsonStr必须为对象序列化生成的字符串");
-            }
-
-            var kvSb = new StringBuilder();
-
-            foreach (var t in ((JObject)jToken).Properties())
-            {
-                //kvSb.Append(System.Web.HttpUtility.UrlEncode(t.Name));
-                kvSb.Append(t.Name);
-                kvSb.Append("=");
-                kvSb.Append(System.Web.HttpUtility.UrlEncode(t.Value.ToString(Formatting.None).Trim('\"')));
-                kvSb.Append("&");
-            }
-
-            return kvSb.ToString().TrimEnd('&');
         }
 
         /// <summary>

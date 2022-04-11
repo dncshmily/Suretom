@@ -2,6 +2,7 @@
 using Suretom.Client.Common;
 using Suretom.Client.IService;
 using System;
+using System.Collections.Specialized;
 using System.Windows;
 
 namespace Suretom.Client.UI
@@ -37,7 +38,13 @@ namespace Suretom.Client.UI
         {
             try
             {
-                var result = _loginService.Login(GlobalContext.UserInfo.UserName, GlobalContext.UserInfo.PassWord, GlobalContext.UserInfo.verifycode);
+                var paramValue = new NameValueCollection() {
+                        { "userCode",GlobalContext.UserInfo.UserName},
+                        { "userPwd",GlobalContext.UserInfo.PassWord},
+                        { "verifycode",GlobalContext.UserInfo.Verifycode}
+                    };
+
+                var result = _loginService.Login(paramValue);
                 if (result.Success)
                 {
                     _loginService.SetLoginInfo(result.Data["token"].ToString());
